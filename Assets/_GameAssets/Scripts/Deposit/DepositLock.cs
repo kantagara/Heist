@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Heist.Deposit
 {
     
-    public class DepositLock : MonoBehaviour
+    public class DepositLock : MonoBehaviour, IInteractable
     {
         [SerializeField] private float _timeToUnlock;
         [SerializeField] private GameObject _particles;
@@ -18,12 +18,6 @@ namespace Heist.Deposit
             if (!_particles) return;
             _particlesInstance = Instantiate(_particles).GetComponent<ParticleSystem>();
             _particlesInstance.Stop();
-        }
-
-        private void OnMouseOver()
-        {
-            if (Input.GetMouseButton(0))
-                TryUnlocking();
         }
 
         private void TryUnlocking()
@@ -40,6 +34,16 @@ namespace Heist.Deposit
         private void LockUnlocked()
         {
             gameObject.SetActive(false);
+        }
+
+        public void Interact()
+        {
+            TryUnlocking();
+        }
+
+        public void InteractionStopped()
+        {
+            
         }
     }
 }

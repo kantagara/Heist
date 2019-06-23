@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6665414852965947348}
   - component: {fileID: 1599486730999165268}
+  - component: {fileID: 3000095249676459211}
   m_Layer: 0
   m_Name: Depo_Large
   m_TagString: Untagged
@@ -52,8 +53,27 @@ MonoBehaviour:
   - {fileID: 5655610413265734076}
   - {fileID: 5453128250553580007}
   - {fileID: 7078368779834516047}
-  _objectsToInstantiate: []
-  _lock: {fileID: 1132564892688781369}
+  _objectsToInstantiate:
+  - {fileID: 4119175742270310337, guid: bb8ca8d6a3dd1495684a04b19de33e43, type: 3}
+  - {fileID: 435341022239484109, guid: c9132400c866b4b4eb37707b01c239fc, type: 3}
+  - {fileID: 1783180514510359348, guid: e3cfb3e6833cb4bd2a8cceead9e02317, type: 3}
+  - {fileID: 3270090382852623438, guid: fff9b7ff1e06a49ada1aca6bef2ee2fc, type: 3}
+  - {fileID: 139375216451938613, guid: eb0c9c8885dd142beaacef4746a7ee5c, type: 3}
+  _lid: {fileID: 5636662180365678319}
+  _force: {x: 15, y: 30, z: 0}
+--- !u!65 &3000095249676459211
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9200123071636979474}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.53617024, y: 0.31224048, z: 0.904366}
+  m_Center: {x: -0.42, y: 0.92, z: -0.53}
 --- !u!1001 &1132564892688654781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111,12 +131,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8ed81a5cf0b1934a9ad90762f074825, type: 3}
---- !u!1 &1132564892688781369 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 143748, guid: c8ed81a5cf0b1934a9ad90762f074825,
-    type: 3}
-  m_PrefabInstance: {fileID: 1132564892688654781}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1132564892689001279 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 477826, guid: c8ed81a5cf0b1934a9ad90762f074825,
@@ -195,6 +209,12 @@ PrefabInstance:
 --- !u!4 &6883196166560718367 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2282438387297135973, guid: cbb7f34436b9c414fa649861b90a4624,
+    type: 3}
+  m_PrefabInstance: {fileID: 4623754185234527098}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &5636662180365678319 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1014345160180499861, guid: cbb7f34436b9c414fa649861b90a4624,
     type: 3}
   m_PrefabInstance: {fileID: 4623754185234527098}
   m_PrefabAsset: {fileID: 0}
