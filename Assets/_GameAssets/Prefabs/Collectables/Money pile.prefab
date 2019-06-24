@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5141050654570808807}
   - component: {fileID: 5141050654569893747}
   - component: {fileID: -4278617016087329226}
+  - component: {fileID: 5051228721299950868}
   m_Layer: 0
   m_Name: Money pile
   m_TagString: Untagged
@@ -91,3 +92,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _amount: 1000
+--- !u!65 &5051228721299950868
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5141050654567671567}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3976593, y: 0.13864303, z: 0.5821762}
+  m_Center: {x: 0, y: 0.06932151, z: 0}

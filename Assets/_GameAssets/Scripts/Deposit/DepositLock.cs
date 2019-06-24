@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Heist.Deposit
 {
     
-    public class DepositLock : MonoBehaviour, IInteractable
+    public class DepositLock : Interactable
     {
         [SerializeField] private float _timeToUnlock;
         [SerializeField] private GameObject _particles;
@@ -36,14 +36,15 @@ namespace Heist.Deposit
             gameObject.SetActive(false);
         }
 
-        public void Interact()
+        public override void Interact()
         {
+            //TODO: Enable UI to see the progress how much it's left
             TryUnlocking();
         }
 
-        public void InteractionStopped()
+        public override void InteractionStopped()
         {
-            
+            //TODO: Disable UI progress
         }
     }
 }

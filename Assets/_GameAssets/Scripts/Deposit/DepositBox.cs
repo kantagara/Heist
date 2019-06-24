@@ -1,10 +1,11 @@
-using System;
+
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Heist.Deposit
 {
-    public class DepositBox : MonoBehaviour, IInteractable
+    public class DepositBox :  Interactable
     {
         [SerializeField] private GameObject[] _instatiationLocations;
         [SerializeField] private GameObject[] _objectsToInstantiate;
@@ -12,14 +13,28 @@ namespace Heist.Deposit
         [SerializeField] private Vector3 _force;
 
         private Tween _tween;
+        private bool _tweenPlayed;
 
-        public void Interact()
+        private void Awake()
         {
-
-            if(_tween != null && _tween.IsPlaying()) return;
-            if (transform.position.z == 0 && _tween == null)
+            foreach (var location in _instatiationLocations)
             {
-                _tween = transform.DOMoveZ(1, .5f).OnComplete(() => _tween = null);
+                var index = Random.Range(0, _objectsToInstantiate.Length);
+                Instantiate(_objectsToInstantiate[index], 
+                    location.transform.position, Quaternion.identity, location.transform);
+            }
+        }
+
+        public override void Interact()
+        {
+            if(_tween != null && _tween.IsPlaying()) return;
+            if (_tween == null && !_tweenPlayed)
+            {
+                _tween = transform.DOMoveZ(1, .5f).OnComplete(() =>
+                {
+                    _tweenPlayed = true;
+                    _tween = null;
+                });
                 return;
             }
 
@@ -38,7 +53,7 @@ namespace Heist.Deposit
             _lid.gameObject.SetActive(false);
         }
 
-        public void InteractionStopped()
+        public override void InteractionStopped()
         {
         }
     }
